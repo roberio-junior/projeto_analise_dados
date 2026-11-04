@@ -1,0 +1,15 @@
+# Ambientes Python locais
+.venv/
+venv/
+
+# Arquivos temporários do Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Resultados produzidos pelos scripts
+resultados/
+
+# Arquivos locais do editor
+.vscode/
+.idea/

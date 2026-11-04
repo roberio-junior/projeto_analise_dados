@@ -1,0 +1,164 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 2828 >>
+stream
+BT /F2 12 Tf 1 0 0 1 42 776 Tm (IFRN - TECNICAS DE ANALISE DE DADOS) Tj ET
+BT /F2 12 Tf 1 0 0 1 42 753 Tm (ATIVIDADE 3 - AGRUPAMENTO DE DADOS) Tj ET
+BT /F1 9 Tf 1 0 0 1 44 730 Tm (Rob\351rio Batista de Azev\352do J\372nior e Daniel Goes | insurance.csv) Tj ET
+BT /F2 12 Tf 1 0 0 1 42 705 Tm (Objetivo e metodologia) Tj ET
+BT /F1 9 Tf 1 0 0 1 44 682 Tm (Aplicar K-Means e Agrupamento Hierarquico \(Ward\) aos dados preparados.) Tj ET
+BT /F1 9 Tf 1 0 0 1 44 667 Tm (O pre-processamento foi entregue na Atividade 2 e e reutilizado pelo codigo.) Tj ET
+BT /F1 9 Tf 1 0 0 1 44 652 Tm (A coluna charges possui valores numericos continuos \(nao e uma classe\).) Tj ET
+BT /F1 9 Tf 1 0 0 1 44 637 Tm (Para avaliar os clusters, charges e discretizada por quantis em tres faixas:) Tj ET
+BT /F1 9 Tf 1 0 0 1 44 622 Tm (Baixo, Medio e Alto. A coluna charges NAO participa da formacao dos clusters.) Tj ET
+BT /F1 9 Tf 1 0 0 1 44 607 Tm (O numero de clusters e K = 3, para comparar com as tres faixas de custo.) Tj ET
+BT /F2 12 Tf 1 0 0 1 42 580 Tm (Resultados da dupla - valores a confirmar na execucao) Tj ET
+BT /F1 9 Tf 1 0 0 1 44 557 Tm (Metrica                       K-Means      Hierarquico) Tj ET
+BT /F1 9 Tf 1 0 0 1 44 542 Tm (ARI                          0.204379     0.136107) Tj ET
+BT /F1 9 Tf 1 0 0 1 44 527 Tm (NMI                          0.213334     0.133954) Tj ET
+BT /F1 9 Tf 1 0 0 1 44 512 Tm (Coeficiente de Silhueta      0.185624     0.129670) Tj ET
+BT /F2 12 Tf 1 0 0 1 42 487 Tm (Matrizes de contingencia) Tj ET
+BT /F1 8.6 Tf 1 0 0 1 44 464 Tm (K-Means:           Cluster 0   Cluster 1   Cluster 2) Tj ET
+BT /F1 8.6 Tf 1 0 0 1 44 449 Tm (Baixo                 261          17          79) Tj ET
+BT /F1 8.6 Tf 1 0 0 1 44 434 Tm (Medio                  11         211         134) Tj ET
+BT /F1 8.6 Tf 1 0 0 1 44 419 Tm (Alto                  110         135         111) Tj ET
+BT /F1 8.6 Tf 1 0 0 1 44 404 Tm (Hierarquico:       Cluster 0   Cluster 1   Cluster 2) Tj ET
+BT /F1 8.6 Tf 1 0 0 1 44 389 Tm (Baixo                  66          60         231) Tj ET
+BT /F1 8.6 Tf 1 0 0 1 44 374 Tm (Medio                 200         134          22) Tj ET
+BT /F1 8.6 Tf 1 0 0 1 44 359 Tm (Alto                   94         114         148) Tj ET
+BT /F2 12 Tf 1 0 0 1 42 334 Tm (Consideracoes finais) Tj ET
+BT /F1 8.7 Tf 1 0 0 1 44 311 Tm (K-Means teve desempenho relativo superior nas tres metricas apresentadas.) Tj ET
+BT /F1 8.7 Tf 1 0 0 1 44 296 Tm (Entretanto, os valores baixos de Silhueta, ARI e NMI sugerem separacao) Tj ET
+BT /F1 8.7 Tf 1 0 0 1 44 281 Tm (e correspondencia limitadas entre clusters e faixas de custo.) Tj ET
+BT /F1 8.7 Tf 1 0 0 1 44 266 Tm (As faixas foram CRIADAS por quantis; nao existiam como rotulos no CSV.) Tj ET
+BT /F1 8 Tf 1 0 0 1 44 243 Tm (Fonte: Kaggle - Medical Cost Personal Datasets) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 4758 >>
+stream
+BT /F2 12 Tf 1 0 0 1 42 782 Tm (ATIVIDADE 3 - CODIGO PYTHON COMPLETO) Tj ET
+BT /F1 8 Tf 1 0 0 1 42 764 Tm (Importa o pre-processamento definido na Atividade 2.) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 741 Tm (  1  """IFRN - Atividade 3: Agrupamento do Medical Cost Personal Datasets.) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 728 Tm (  2  Dupla: Rob\351rio Batista de Azev\352do J\372nior e Daniel Goes.) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 715 Tm (  3  O c\363digo de pr\351-processamento consta da entrega da Atividade 2.) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 702 Tm (  4  """) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 689 Tm (  5  ) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 676 Tm (  6  from pathlib import Path) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 663 Tm (  7  import pandas as pd) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 650 Tm (  8  from sklearn.cluster import KMeans, AgglomerativeClustering) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 637 Tm (  9  from sklearn.metrics import \() Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 624 Tm ( 10      adjusted_rand_score, normalized_mutual_info_score, silhouette_score,) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 611 Tm ( 11  \)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 598 Tm ( 12  from atividade_02_preprocessamento import preparar_dados) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 585 Tm ( 13  ) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 572 Tm ( 14  RAIZ = Path\(__file__\).resolve\(\).parents[1]) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 559 Tm ( 15  RESULTADOS = RAIZ / "resultados") Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 546 Tm ( 16  ) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 533 Tm ( 17  ) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 520 Tm ( 18  def main\(\):) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 507 Tm ( 19      # 1. Reutilizar o pr\351-processamento implementado na Atividade 2.) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 494 Tm ( 20      X_treino_preparado, _, y_treino, _ = preparar_dados\(\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 481 Tm ( 21  ) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 468 Tm ( 22      # 2. Discretizar charges em faixas de custo SOMENTE para avalia\347\343o.) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 455 Tm ( 23      # As classes Baixo, M\351dio e Alto n\343o existem originalmente no CSV.) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 442 Tm ( 24      # charges n\343o participa das vari\341veis usadas para obter clusters.) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 429 Tm ( 25      y_treino_faixas = pd.qcut\() Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 416 Tm ( 26          y_treino, q=3, labels=["Baixo", "M\351dio", "Alto"]) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 403 Tm ( 27      \)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 390 Tm ( 28  ) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 377 Tm ( 29      # 3. Aplicar dois algoritmos de agrupamento com tr\352s clusters.) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 364 Tm ( 30      kmeans = KMeans\(n_clusters=3, random_state=42, n_init=10\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 351 Tm ( 31      labels_kmeans = kmeans.fit_predict\(X_treino_preparado\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 338 Tm ( 32      hierarquico = AgglomerativeClustering\(n_clusters=3, linkage="ward"\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 325 Tm ( 33      labels_hierarquico = hierarquico.fit_predict\(X_treino_preparado\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 312 Tm ( 34  ) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 299 Tm ( 35      # 4. M\351tricas externas e interna.) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 286 Tm ( 36      ari_kmeans = adjusted_rand_score\(y_treino_faixas, labels_kmeans\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 273 Tm ( 37      nmi_kmeans = normalized_mutual_info_score\(y_treino_faixas, labels_kmeans\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 260 Tm ( 38      sil_kmeans = silhouette_score\(X_treino_preparado, labels_kmeans\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 247 Tm ( 39      ari_hier = adjusted_rand_score\(y_treino_faixas, labels_hierarquico\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 234 Tm ( 40      nmi_hier = normalized_mutual_info_score\(y_treino_faixas, labels_hierarquico\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 221 Tm ( 41      sil_hier = silhouette_score\(X_treino_preparado, labels_hierarquico\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 208 Tm ( 42  ) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 195 Tm ( 43      resultados = pd.DataFrame\({) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 182 Tm ( 44          "M\351trica": ["ARI", "NMI", "Coeficiente de Silhueta"],) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 169 Tm ( 45          "K-Means": [ari_kmeans, nmi_kmeans, sil_kmeans],) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 156 Tm ( 46          "Agrupamento Hier\341rquico": [ari_hier, nmi_hier, sil_hier],) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 143 Tm ( 47      }\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 130 Tm ( 48      print\("\\nComparativo dos algoritmos:"\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 117 Tm ( 49      print\(resultados.to_string\(index=False, float_format=lambda n: f"{n:.6f}"\)\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 104 Tm ( 50  ) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 91 Tm ( 51      # 5. Tabelas cruzadas: clusters x faixas de charges.) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 1928 >>
+stream
+BT /F2 12 Tf 1 0 0 1 42 782 Tm (ATIVIDADE 3 - CODIGO PYTHON COMPLETO) Tj ET
+BT /F1 8 Tf 1 0 0 1 42 764 Tm (Importa o pre-processamento definido na Atividade 2.) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 741 Tm ( 52      tabela_kmeans = pd.crosstab\() Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 728 Tm ( 53          y_treino_faixas, labels_kmeans,) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 715 Tm ( 54          rownames=["Faixa de charges"], colnames=["Cluster K-Means"],) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 702 Tm ( 55      \)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 689 Tm ( 56      tabela_hier = pd.crosstab\() Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 676 Tm ( 57          y_treino_faixas, labels_hierarquico,) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 663 Tm ( 58          rownames=["Faixa de charges"], colnames=["Cluster Hier\341rquico"],) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 650 Tm ( 59      \)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 637 Tm ( 60      print\("\\nDistribui\347\343o: K-Means por faixa de custo\\n", tabela_kmeans\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 624 Tm ( 61      print\("\\nDistribui\347\343o: Hier\341rquico por faixa de custo\\n", tabela_hier\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 611 Tm ( 62  ) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 598 Tm ( 63      # 6. Salvar arquivos de resultado em uma \372nica pasta.) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 585 Tm ( 64      RESULTADOS.mkdir\(parents=True, exist_ok=True\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 572 Tm ( 65      resultados.to_csv\(RESULTADOS / "atividade3_metricas.csv", index=False\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 559 Tm ( 66      tabela_kmeans.to_csv\(RESULTADOS / "atividade3_matriz_kmeans.csv"\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 546 Tm ( 67      tabela_hier.to_csv\(RESULTADOS / "atividade3_matriz_hierarquico.csv"\)) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 533 Tm ( 68  ) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 520 Tm ( 69  ) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 507 Tm ( 70  if __name__ == "__main__":) Tj ET
+BT /F3 7.7 Tf 1 0 0 1 40 494 Tm ( 71      main\(\)) Tj ET
+endstream
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000128 00000 n 
+0000000225 00000 n 
+0000000327 00000 n 
+0000000422 00000 n 
+0000000568 00000 n 
+0000003447 00000 n 
+0000003593 00000 n 
+0000008402 00000 n 
+0000008550 00000 n 
+trailer
+<< /Size 12 /Root 1 0 R >>
+startxref
+10530
+%%EOF
